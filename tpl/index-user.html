@@ -1,0 +1,65 @@
+<div id='container'>
+  <div id='box'>
+    <div class='block'>
+      <div class="control">
+		
+        <a href="#newuser" class="button">
+          <img src="images/icons/add.png">
+          Add User
+        </a>
+		
+		<a href="#" class="button">
+          <img src="images/icons/add.png">
+			Items
+        </a>
+      </div>
+      <div class='content'>
+        <h3>Users</h3>
+        <div class='inner'>
+          <p class='big'>
+            Create, display, update and remove users
+          </p>
+          <table class='table'>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th class='last'></th>
+            </tr>
+            <tbody id='items'>
+              <% collection.each(function(item) { %>
+                <% if (!(item.get('deleted') && !item.get('dirty'))) { %>
+                  <% if (item.get('deleted')) { %>
+                    <tr style="color:darkred">
+                    <td style="text-decoration:line-through"><%= item.id %></td>
+                  <% } else { %>
+                    <tr style="color:<%= item.get('dirty')? '#BB9004' : 'black' %>;">
+                    <td><%= item.id %></td>
+                  <% } %>
+                    <td><%= item.escape('first_name') %></td>
+                    <td><%= item.escape('last_name') %></td>
+                    <td class='last'>
+                      <a href="#users/<%= item.id %>"><img alt="Show"
+                         onmouseout="this.src='images/icons/24/show.png'"
+                         onmouseover="this.src='images/icons/24/show-hover.png'"
+                         src="images/icons/24/show.png"
+                         title="Show"></a><a href="#users/<%= item.id %>/edit"><img alt="Edit"
+                         onmouseout="this.src='images/icons/24/edit.png'"
+                         onmouseover="this.src='images/icons/24/edit-hover.png'"
+                         src="images/icons/24/edit.png"
+                         title="Edit"></a><a href="#users/<%= item.id %>/delete"><img alt="Delete"
+                         onmouseout="this.src='images/icons/24/cross.png'"
+                         onmouseover="this.src='images/icons/24/cross-hover.png'"
+                         src="images/icons/24/cross.png"
+                         title="Delete"></a>
+                    </td>
+                  </tr>
+                <% } %>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div id='container'>
+  <div id='box'>
+    <div class='block'>
+      <div class='content'>
+        <h3>User #<%= model.id %></h3>
+        <p>
+          <strong>First name</strong>: <%= model.get('first_name') %>
+        </p>
+        <p>
+          <strong>Last name</strong>: <%= model.get('last_name') %>
+        </p>
+        <div class="group navform wat-cf">
+          <a href="#" class='button'>
+            Go back
+          </a>
+        </div>
+      </div>
+      <div class='breadcrumb'>
+        <ul>
+          <li class='first'>
+            <a href="#users">Users</a>
+          </li>
+          <li>
+            <a href="<%= window.location.hash %>">Show user</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

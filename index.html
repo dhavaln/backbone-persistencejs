@@ -1,0 +1,46 @@
+<html>
+<head>
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/underscore-min.js"></script>
+	<script src="libs/backbone-min.js"></script>
+	<script src="libs/utils.js"></script>
+	
+	<script src="persistence/persistence.js"></script>
+	<script src="persistence/persistence.store.memory.js"></script>
+	<script src="persistence/persistence.store.sql.js"></script>
+	<script src="persistence/persistence.store.websql.js"></script>
+	<script src="persistence/persistence.sync.js"></script>
+	
+	<script src="app/server.push.js"></script>
+	
+	<script src="app/database-util.js"></script>
+	<script src="app/database.js"></script>
+	<script src="app/sync.js"></script>
+	
+	<script src="app/application.js"></script>
+	<script src="app/models/item.js"></script>
+	<script src="app/collections/items.js"></script>
+	
+	<script src="app/views/notice.js"></script>
+	<script src="app/views/show.js"></script>
+	<script src="app/views/index.js"></script>
+	<script src="app/views/edit.js"></script>
+	<script src="app/views/showuser.js"></script>
+	<script src="app/views/indexuser.js"></script>
+	<script src="app/views/edituser.js"></script>
+	
+	<script src="app/controllers/items.js"></script>
+</head>
+<body>
+	<div id="notice"></div>
+	<div id="app"></div>
+
+<script type="text/javascript">
+    $(function() {
+		tpl.loadTemplates(['edit','index','show', 'edit-user', 'index-user', 'show-user'], function () {
+			App.init();
+        });
+    });
+</script>
+</body>
+</html>
