@@ -70,6 +70,9 @@
 	
 	db.sync = function(callback, item) {
 		console.log("sync called");
+		
+		//TODO check item instance and call _sync() method accordingly
+		
 		db._sync([
 			{"entity": ItemEntity, "uri": item_sync_uri}, 
 			{"entity": UserEntity, "uri": user_sync_uri}
